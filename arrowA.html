@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+            padding:0px;
+            background-color: rgb(30, 101, 235);
+        }
+        .wrapper{
+            position: absolute;
+            top:50%;
+            left:50%;
+            /* background-color: rgb(247, 200, 72); */
+            height: 20px;
+            width: 100px;
+            transition: transform 0.3s ease-in;
+
+        }
+        .circ{
+            height: 60px;
+            width: 60px;
+            border: 3px solid white;
+            border-radius: 100%;
+            position: absolute;
+            top:-27px;
+            left:55px;
+            animation: circleAnimate 0.3s ease-in-out infinite;
+        }
+        .line{
+            background-color:white;
+            height: 4px;
+            width: 100px;
+            border-radius: 5px;
+        }
+        .top{
+            background-color:white;
+            height: 4px;
+            width: 25px;
+            transform: translate(77.5px,-4px) rotate(45deg);
+            border-radius: 5px;
+        }
+        .bottom{
+            background-color:white;
+            height: 4px;
+            width: 25px;
+            transform:translate(77.5px,4px) rotate(-45deg);
+            border-radius: 5px;
+        }
+        .wrapper:hover{
+            transform:translate(15px);
+        }
+        @keyframes circleAnimate {
+            from{
+                border: 3px solid rgb(233, 176, 20);
+            }
+            to{
+                border: 3px solid white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="circ"></div>
+        <div class="top"></div>
+        <div class="line"></div>
+        <div class="bottom"></div>
+    </div>
+</body>
+</html>
