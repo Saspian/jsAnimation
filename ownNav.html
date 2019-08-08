@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body{
+            font-family: 'Raleway', sans-serif;
+            margin:0px;
+            padding:0px;
+            box-sizing: border-box;
+        }
+        nav{
+            display: flex;
+            /* justify content le content lai viewport ko center ma lerauxa, align center with composition jastai*/
+            justify-content: space-around;
+            /* align-items le content lai selected items ko center ma lerauxa, align center with selection jastai*/
+            align-items: center;
+            background-color: rgb(17, 116, 173);
+            color:white;
+            line-height: 2vh;
+        }
+        ul{
+            /* display: inline-flex; */
+            display: flex;
+            justify-content: space-around;
+            min-height: 1vh;
+        }
+        li{
+            list-style-type: none;
+        }
+        a{
+            color:white;
+            text-decoration: none;
+            padding:0px 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+        .base{
+            position: relative;
+            top:1px;
+            left:-1px;
+            width: 80px;
+            height:2px;
+            opacity: 0;
+            transition: transform 0.4s ease;
+            margin:0px auto;
+        }
+
+        .logo h2{
+            cursor: pointer;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .active{
+            color:rgb(233, 202, 24);
+        }
+        li:hover a{
+            color:rgb(233, 202, 24);
+        }
+        li:hover .base{
+            opacity:1;  
+            transform: translate(0,8px);
+            background-color:rgb(233, 202, 24);
+        }
+
+        .burger div{
+            width:24px;
+            height: 2px;
+            margin: 4px;
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+        /* .burger .line1{background-color: white;}
+        .burger .line2{background-color: yellow;}
+        .burger .line3{background-color: red;} */
+        .burger{
+            display: none;
+        }
+        @media screen and (max-width:700px){
+            body{
+                overflow: hidden;
+            }
+            .nav-links{
+                position: absolute;
+                right: 0px;
+                height: 50vh;
+                top: 4.6vh;
+                background-color: rgb(17, 116, 173);
+                /* display: flex; */
+                flex-direction: column;
+                width:100%;
+                align-items: center;
+                transform: translateX(100%);
+                transition: transform 0.5s ease;
+            }
+            .burger{
+                display: block;
+                cursor: pointer;
+            }
+            .nav-active{
+                transform:translateX(0%);
+                opacity: 100%;
+            }
+        }
+        @keyframes navLinkFade{
+                from{
+                    opacity: 0;
+                    transform: translateX(100px);
+                }
+                to{
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
+        }
+        .change .line1{
+            transform: rotate(-45deg) translate(-2.5px,6px);
+        }
+        .change .line2{
+                opacity: 0;
+        }
+        .change .line3{
+            transform: rotate(45deg) translate(-2.5px,-6px);
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h2>San<span style="color:rgb(233, 202, 24)">jay</span></h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a><div class="base"></div></li>
+            <li><a href="#">About</a><div class="base"></div></li>
+            <li><a href="#">Project</a><div class="base"></div></li>
+            <li><a href="#">Members</a><div class="base"></div></li>
+            <li><a href="#">Clients</a><div class="base"></div></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+</body>
+<script src="ownNav.js"></script>
+</html>
