@@ -55,9 +55,7 @@
             letter-spacing: 3px;
             text-transform: uppercase;
         }
-        .active{
-            color:rgb(233, 202, 24);
-        }
+        
         li:hover a{
             color:rgb(233, 202, 24);
         }
@@ -80,31 +78,45 @@
         .burger{
             display: none;
         }
+        .active{
+            color:rgb(233, 202, 24);
+            }
         @media screen and (max-width:700px){
             body{
-                overflow: hidden;
+                /* overflow: hidden; */
+            }
+            .active{
+            color:rgb(233, 202, 24);
             }
             .nav-links{
                 position: absolute;
-                right: 0px;
+                right: -106%;
                 height: 50vh;
-                top: 4.6vh;
+                top: 4.5vh;
                 background-color: rgb(17, 116, 173);
                 /* display: flex; */
                 flex-direction: column;
                 width:100%;
                 align-items: center;
-                transform: translateX(100%);
-                transition: transform 0.5s ease;
+                /* transform: translateX(100%); */
+                transition: right 0.5s ease;
             }
             .burger{
                 display: block;
                 cursor: pointer;
             }
             .nav-active{
-                transform:translateX(0%);
-                opacity: 100%;
+                /* transform:translateX(0%); */
+                right: 0%;
             }
+        }
+         @keyframes barDekha { 
+            from{
+                transform: translateX(100%);
+            }
+            to{
+                transform:translateX(0%);
+            } 
         }
         @keyframes navLinkFade{
                 from{
@@ -134,11 +146,11 @@
             <h2>San<span style="color:rgb(233, 202, 24)">jay</span></h2>
         </div>
         <ul class="nav-links">
-            <li><a href="#" class="active">Home</a><div class="base"></div></li>
-            <li><a href="#">About</a><div class="base"></div></li>
-            <li><a href="#">Project</a><div class="base"></div></li>
-            <li><a href="#">Members</a><div class="base"></div></li>
-            <li><a href="#">Clients</a><div class="base"></div></li>
+            <li><a href="#" class="anchor">Home</a><div class="base"></div></li>
+            <li><a href="#" class="anchor">About</a><div class="base"></div></li>
+            <li><a href="#" class="anchor">Project</a><div class="base"></div></li>
+            <li><a href="#" class="anchor">Members</a><div class="base"></div></li>
+            <li><a href="#" class="anchor">Clients</a><div class="base"></div></li>
         </ul>
         <div class="burger">
             <div class="line1"></div>
