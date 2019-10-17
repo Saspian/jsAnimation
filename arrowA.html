@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Arrow Animation</title>
     <style>
         body{
             margin: 0px;
@@ -18,7 +18,7 @@
             /* background-color: rgb(247, 200, 72); */
             height: 20px;
             width: 100px;
-            transition: transform 0.3s ease-in;
+            transition: transform 0.2s ease-in;
 
         }
         .circ{
@@ -29,7 +29,7 @@
             position: absolute;
             top:-27px;
             left:55px;
-            animation: circleAnimate 0.3s ease-in-out infinite;
+            /* animation: circleAnimate 0.3s ease-in-out infinite; */
         }
         .line{
             background-color:white;
@@ -54,19 +54,45 @@
         .wrapper:hover{
             transform:translate(15px);
         }
-        @keyframes circleAnimate {
+        /* @keyframes circleAnimate {
             from{
                 border: 3px solid rgb(233, 176, 20);
             }
             to{
                 border: 3px solid white;
             }
+        } */
+        svg{
+            height: 100px;
+            width:100px;
+            position: absolute;
+            /* top:284px;
+            left:377px; */
+            top:-44px;
+            left:36px;
+        }
+        .cls-1{
+            fill:none;
+            stroke:rgb(255, 255, 255);
+            /* stroke-miterlimit:10; */
+            stroke-width:3;
+            stroke-dasharray: 208;  
+            stroke-dashoffset: 208;
+            transition: 0.2s ease;
+            /* animation: animate 0.3s linear infinite; */
+        }
+        .cls-1:hover {
+            stroke-dasharray: 416; 
         }
     </style>
 </head>
 <body>
+    <!-- <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 722.59 722.59"><defs><style></style></defs><title>circle</title><circle class="cls-1" cx="361.3" cy="361.3" r="357.8"/></svg> -->
     <div class="wrapper">
-        <div class="circ"></div>
+        <svg class="cls-1">
+            <circle cx="50" cy="50" r="33" />
+        </svg> 
+        <!-- <div class="circ"></div> -->
         <div class="top"></div>
         <div class="line"></div>
         <div class="bottom"></div>
